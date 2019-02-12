@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { Grid, Form, Checkbox, Button } from 'semantic-ui-react'
+import { Grid, Form, Checkbox, Button, Image } from 'semantic-ui-react'
 import Link from 'next/link'
 
 class Login extends PureComponent {
@@ -16,9 +16,11 @@ class Login extends PureComponent {
 		const { email, password, remember } = this.state
 
 	  return (
+			<LoginContainer>
 	    <LoginGrid centered columns={1}>
 				<Grid.Column width={6}>
 					<FormContainer>
+						<LogoImage src="../../../static/images/roommate-logo-white.png" />
 						<Form>
 							<InputContainer>
 								<Form.Input
@@ -63,20 +65,39 @@ class Login extends PureComponent {
 					</FormContainer>
 				</Grid.Column>
 	    </LoginGrid>
+			</LoginContainer>
 	  )
 	}
 }
 
+const LoginContainer = styled.div`
+	{
+		background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../../../static/images/login-bg.jpeg');
+		background-repeat: no-repeat;
+		background-position: center;
+		-webkit-background-size: cover;
+		-moz-background-size:  cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+`
+
 const LoginGrid = styled(Grid)`
-  & {
+  &.ui.grid {
     height: 100vh;
 		margin: 0;
-		background-color: gray;
   }
 `
 const FormContainer = styled.div`
 	& {
 		margin: 20% 0;
+	}
+`
+const LogoImage = styled(Image)`
+	&.ui.image {
+		max-width: 50%;
+		margin: 10% 25%;
 	}
 `
 const InputContainer = styled.div`
