@@ -1,9 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
+import Login from '../components/pages/Login'
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
-
-export default () => <Title>Roommates</Title>
+export default () => <Login />
