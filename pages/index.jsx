@@ -1,4 +1,8 @@
-import React from 'react'
-import Login from '../components/pages/Login'
+import React from 'react';
+import Login from '../components/pages/Login';
 
-export default () => <Login />
+const HomePage = () => <Login />;
+
+HomePage.displayName = 'HomePage';
+
+export default HomePage;
