@@ -21,14 +21,15 @@ class HMXDocument extends Document {
             content="initial-scale=1, width=device-width"
             key="viewport"
           />
+          <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
           <link
             rel="stylesheet"
             href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
           />
-          <link 
+          <link
             href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"
           />
-          <link 
+          <link
             rel="stylesheet"
             href="/static/styles/style.css"
           />

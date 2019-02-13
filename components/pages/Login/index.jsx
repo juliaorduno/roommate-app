@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import media from "styled-media-query"
 import { Grid, Form, Checkbox, Button, Image } from 'semantic-ui-react'
 import Link from 'next/link'
 
@@ -11,14 +12,21 @@ class Login extends PureComponent {
 		remember: false
 	}
 
+	onChange = (e, { name, value }) => {
+    this.setState({ [[name]]: value })
+	}
+	
+	handleChecked = () => {
+    this.setState({remember: !this.state.remember});
+  }
+
 	render() {
 
 		const { email, password, remember } = this.state
 
 	  return (
-			<LoginContainer>
 	    <LoginGrid centered columns={1}>
-				<Grid.Column width={6}>
+				<Grid.Column mobile={15} computer={6}>
 					<FormContainer>
 						<LogoImage src="../../../static/images/roommate-logo-white.png" />
 						<Form>
@@ -28,6 +36,7 @@ class Login extends PureComponent {
 									value={email}
 									name="email"
 									type="email"
+									onChange={this.onChange}
 									placeholder="Type your email"
 									required
 								/>
@@ -38,6 +47,7 @@ class Login extends PureComponent {
 									type="password"
 									value={password}
 									name="password"
+									onChange={this.onChange}
 									placeholder="Type your password"
 									required
 								/>
@@ -45,8 +55,10 @@ class Login extends PureComponent {
 							<Grid columns={2}>
 								<Grid.Column>
 									<RememberCheckbox 
-										label='Remember me'
+										label="Remember me"
 										checked={remember}
+										onChange={this.handleChecked}
+										name="remember"
 									/>
 								</Grid.Column>
 								<ForgotContainer>
@@ -63,15 +75,24 @@ class Login extends PureComponent {
 							Sign Up
 						</LoginButton>
 					</FormContainer>
+					<Footer>
+						2019 © Roommate App. All Rights Reserved
+						<FooterLinks>
+							<div>Privacy Policy</div>
+							<div>Terms and Conditions</div>
+							<div>Careers</div>
+						</FooterLinks>
+					</Footer>
 				</Grid.Column>
 	    </LoginGrid>
-			</LoginContainer>
 	  )
 	}
 }
 
-const LoginContainer = styled.div`
-	{
+const LoginGrid = styled(Grid)`
+  &.ui.grid {
+    min-height: 100vh;
+		margin: 0;
 		background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../../../static/images/login-bg.jpeg');
 		background-repeat: no-repeat;
 		background-position: center;
@@ -80,13 +101,6 @@ const LoginContainer = styled.div`
 		-o-background-size: cover;
 		background-size: cover;
 		background-attachment: fixed;
-	}
-`
-
-const LoginGrid = styled(Grid)`
-  &.ui.grid {
-    height: 100vh;
-		margin: 0;
   }
 `
 const FormContainer = styled.div`
@@ -125,14 +139,23 @@ const InputContainer = styled.div`
 	}
 `
 const RememberCheckbox = styled(Checkbox)`
-	&.ui.checkbox label {
+	&.ui.checkbox label,
+	&.ui.checkbox input:active~label,
+	&.ui.checkbox input:focus~label {
 		color: #ffff;
+		transition: none;
 	}
 
 	&.ui.checkbox label:before, 
 	&.ui.checkbox label:active::before {
 		background-color: rgba(0,0,0,0);
 	}
+
+	${media.lessThan("medium")`
+		&.ui.checkbox label {
+			font-size: 13px;
+		}
+  `}
 `
 const ForgotContainer = styled(Grid.Column)`
 	& {
@@ -143,6 +166,12 @@ const ForgotContainer = styled(Grid.Column)`
 		cursor: pointer;
 		color: #ffff;
 	}
+
+	${media.lessThan("medium")`
+		& a {
+			font-size: 13px;
+		}
+	`}
 `
 const LoginButton = styled(Button)`
 	&&.ui.button, &&.ui.button:hover {
@@ -160,7 +189,29 @@ const LoginButton = styled(Button)`
 		background-image: linear-gradient(to right, #F25335, #F9811F);
 		margin-top: 2em;
 	}
+`
+const Footer = styled.div`
+  & {
+    text-align: center;
+    font-size: 12px;
+		line-height: 1.5rem;
+		color: #ffff;
+		margin-bottom: 10%;
+  }
+`
+const FooterLinks = styled.div`
+	& {
+		margin-top: 1em;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 3em;
+	}
 
+	${media.lessThan("medium")`
+		& {
+			padding: 0;
+		}
+  `}
 `
 
 export default Login

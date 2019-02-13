@@ -8,7 +8,7 @@ class RoommatesApp extends App {
     return (
       <Container>
         <Header>
-          <title>Roommates</title>
+          <title>Roommate</title>
         </Header>
         <Component {...pageProps} />
       </Container>
