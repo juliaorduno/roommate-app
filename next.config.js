@@ -2,6 +2,9 @@ module.exports = {
   serverRuntimeConfig: {
     // Only available on server side
   },
+  publicRuntimeConfig: {
+    // Available on both server and client
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.(png|svg|eot|otf|ttf|woff|woff2)$/,
