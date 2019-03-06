@@ -22,6 +22,10 @@ RoommatesApp.displayName = 'RoommatesApp';
 
 const GlobalStyle = createGlobalStyle`
   body {
+    margin: 0;
+  }
+  
+  body * {
     font-family: 'Poppins', sans-serif;
   }
 `;
