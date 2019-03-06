@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
-import AuthLayout from '../../Layout/AuthLayout';
+import Link from 'next/link';
 import {
   LogoImage,
-  FormContainer,
   ActionsContainer,
   RememberContainer,
   RememberCheckbox,
   Remember,
   Forgot
 } from './styles';
+import { FormContainer } from '../styles';
 import Field from '../Field';
 import Button from '../Button';
 
@@ -32,7 +32,7 @@ class Login extends PureComponent {
     const { email, password, remember } = this.state;
 
     return (
-      <AuthLayout>
+      <React.Fragment>
         <LogoImage src="/static/images/roommate-logo-white.png" />
         <FormContainer>
           <Field
@@ -69,9 +69,11 @@ class Login extends PureComponent {
             <Forgot>Forgot your password</Forgot>
           </ActionsContainer>
           <Button width="100%" text="Login" onClick={() => {}} addClass="primary" />
-          <Button width="100%" text="Sign up" onClick={() => {}} addClass="secondary" />
+          <Link href="/signup">
+            <Button width="100%" text="Sign up" onClick={() => {}} addClass="secondary" />
+          </Link>
         </FormContainer>
-      </AuthLayout>
+      </React.Fragment>
     );
   }
 }

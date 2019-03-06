@@ -6,10 +6,6 @@ export const LogoImage = styled.img`
   margin: 10% 25%;
 `;
 
-export const FormContainer = styled.div`
-  margin-bottom: 165px;
-`;
-
 export const ActionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -24,6 +20,7 @@ export const RememberContainer = styled.div`
 export const RememberCheckbox = styled.input`
   width: 16px;
   height: 16px;
+  margin: 0;
 
   &:focus: {
     offset: 0;
@@ -34,6 +31,7 @@ export const Remember = styled.p`
   color: ${colors.secondaryTextColor};
   font-size: 12px;
   line-height: 18px;
+  margin: 0;
   margin-left: 8px;
 `;
 
