@@ -19,10 +19,9 @@ class RDocument extends Document {
           <meta name="viewport" content="initial-scale=1, width=device-width" key="viewport" />
           <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
           <link
+            href="https://fonts.googleapis.com/css?family=Poppins:400,400i,700"
             rel="stylesheet"
-            href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
           />
-          <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
         </Head>
         <body>
           <Main />
