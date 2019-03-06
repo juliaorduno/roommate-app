@@ -1,9 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import Login from '../components/pages/Login';
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
+const HomePage = () => <Login />;
 
-export default () => <Title>Roommates</Title>
+HomePage.displayName = 'HomePage';
+
+export default HomePage;
