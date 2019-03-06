@@ -34,7 +34,7 @@ export const Input = styled.input`
 export const Label = styled.label`
   width: 100%;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 23px;
   color: ${colors.primaryTextColor};
 `;
@@ -49,7 +49,7 @@ export const AuthButton = styled.button`
   border: 0;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
 
   &:focus {
     outline: 0;
@@ -67,7 +67,7 @@ export const AuthButton = styled.button`
 export const Header = styled.h1`
   margin: 0;
   font-size: 42px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 54px;
   color: ${colors.whiteColor};
 `;
@@ -76,4 +76,5 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 44px;
+  margin-top: 44px;
 `;
