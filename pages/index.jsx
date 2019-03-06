@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from '../components/pages/Login';
+import Login from '../components/Auth/Login';
 
 const HomePage = () => <Login />;
 
