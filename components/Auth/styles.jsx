@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { colors, buttonsBorderRadius } from '../../static/styleConstants';
 
+export const FormContainer = styled.div`
+  margin-bottom: 165px;
+`;
+
 export const InputContainer = styled.div`
   background-color: ${colors.whiteColor};
   border-radius: 5px;
@@ -58,4 +62,18 @@ export const AuthButton = styled.button`
   &.secondary {
     background-color: ${colors.secondaryColor};
   }
+`;
+
+export const Header = styled.h1`
+  margin: 0;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 54px;
+  color: ${colors.whiteColor};
+`;
+
+export const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 44px;
 `;
