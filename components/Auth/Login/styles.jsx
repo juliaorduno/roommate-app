@@ -3,7 +3,10 @@ import { colors } from '../../../static/styleConstants';
 
 export const LogoImage = styled.img`
   max-width: 50%;
-  margin: 10% 25%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 125px;
+  margin-bottom: 44px;
 `;
 
 export const ActionsContainer = styled.div`

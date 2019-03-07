@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -28,4 +29,6 @@ export const FormContainer = styled.div`
 export const FooterContainer = styled.div`
   width: 100%;
   height: 51px;
+  position: relative;
+  bottom: 50px;
 `;
