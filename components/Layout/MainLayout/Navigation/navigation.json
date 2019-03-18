@@ -1,0 +1,24 @@
+{
+  "links": [
+    {
+      "label": "Home",
+      "route": "/home"
+    },
+    {
+      "label": "To-do's",
+      "route": "/to-do"
+    },
+    {
+      "label": "Meetings",
+      "route": "/meetings"
+    },
+    {
+      "label": "Announcements",
+      "route": "/announcements"
+    },
+    {
+      "label": "Shopping List",
+      "route": "/shopping-list"
+    }
+  ]
+}
