@@ -68,7 +68,9 @@ class Login extends PureComponent {
             </RememberContainer>
             <Forgot>Forgot your password</Forgot>
           </ActionsContainer>
-          <Button width="100%" text="Login" onClick={() => {}} addClass="primary" />
+          <Link href="/home">
+            <Button width="100%" text="Login" onClick={() => {}} addClass="primary" />
+          </Link>
           <Link href="/signup">
             <Button width="100%" text="Sign up" onClick={() => {}} addClass="secondary" />
           </Link>
