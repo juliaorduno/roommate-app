@@ -14,6 +14,14 @@ export const Content = styled.div`
   justify-content: center;
 `;
 
+export const TitleContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+  margin-bottom: 30px;
+`;
+
 export const CenteredContent = styled.div`
   width: 100%;
   max-width: 683px;

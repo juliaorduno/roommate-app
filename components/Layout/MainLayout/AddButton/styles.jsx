@@ -39,7 +39,6 @@ export const Button = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
