@@ -2,7 +2,7 @@ import React from 'react';
 import MainLayout from '../../components/Layout/MainLayout';
 
 const Home = () => (
-  <MainLayout title="Recent activity" active="Home">
+  <MainLayout title="Recent activity" hasAddButton active="Home">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ornare neque risus, at pretium
       purus ullamcorper non. Sed viverra, sem in posuere tempor, elit ipsum rhoncus ante, ut

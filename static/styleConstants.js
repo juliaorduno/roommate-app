@@ -9,6 +9,8 @@ export const colors = {
   primaryColor: '#fb861d',
   primaryGradient: 'linear-gradient(270deg, #FFA50E 0%, #F65335 100%);',
   primaryTextColor: '#5f6266',
+  purpleColor: '#5257f2',
+  darkPurpleColor: '#424dbf',
   secondaryColor: '#6b70f8',
   secondaryTextColor: '#a7a9ac',
   warningColor: '#e45160',
