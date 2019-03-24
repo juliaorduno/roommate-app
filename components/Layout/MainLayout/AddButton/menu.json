@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "label": "To-do item",
+      "modal": "ToDo"
+    },
+    {
+      "label": "Meeting",
+      "modal": "Meeting"
+    },
+    {
+      "label": "Announcement",
+      "modal": "Announcement"
+    },
+    {
+      "label": "Shopping item",
+      "modal": "Shopping"
+    }
+  ]
+}

@@ -3,8 +3,6 @@ import { colors } from '../../../../static/styleConstants';
 
 export const TitleContainer = styled.div`
   width: fit-content;
-  margin-top: 45px;
-  margin-bottom: 30px;
 `;
 
 export const TitleText = styled.h1`
