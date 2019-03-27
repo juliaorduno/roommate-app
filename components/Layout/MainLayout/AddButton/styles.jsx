@@ -50,6 +50,7 @@ export const GroupContainer = styled.div`
 `;
 
 export const MenuContainer = styled.div`
+  z-index: 1;
   position: fixed;
   margin-left: -103px;
   visibility: hidden;

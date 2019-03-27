@@ -1,0 +1,16 @@
+{
+  "cards": [
+    {
+      "type": "shopping",
+      "userName": "Maria Gutiérrez",
+      "item": "6-pack of beers",
+      "date": "Feb 01, 2019 - 7:32 PM"
+    },
+    {
+      "type": "announcement",
+      "userName": "Eduardo Alcazar",
+      "announcement": "Remember guys to make the monthly rental deposit to my bank account by the end of the week.",
+      "date": "Jan 26, 2019 - 11:49 AM"
+    }
+  ]
+}

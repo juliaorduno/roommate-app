@@ -36,6 +36,7 @@ export const LinkItem = styled.a`
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
+  cursor: pointer;
 
   &.active {
     color: ${colors.primaryColor};
