@@ -16,7 +16,8 @@ export const colors = {
   secondaryColor: '#6b70f8',
   secondaryTextColor: '#a7a9ac',
   warningColor: '#e45160',
-  whiteColor: '#ffffff'
+  whiteColor: '#ffffff',
+  greenColor: '#00cb0c'
 };
 
 export const defaultBorderRadius = '10px';

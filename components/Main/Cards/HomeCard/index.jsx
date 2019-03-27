@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ShoppingCard from './ShoppingCard';
 import AnnouncementCard from './AnnouncementCard';
+import TodoCard from './TodoCard'
 
 const HomeCard = ({ data }) => {
   switch (data.type) {
@@ -21,6 +22,15 @@ const HomeCard = ({ data }) => {
           userName={data.userName}
           date={data.date}
           announcement={data.announcement}
+        />
+      );
+    case 'todo':
+      return (
+        <TodoCard
+          avatar={data.avatar ? data.avatar : ''}
+          userName={data.userName}
+          date={data.date}
+          item={data.item}
         />
       );
     default:
