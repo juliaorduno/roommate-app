@@ -30,3 +30,16 @@ export const CenteredContent = styled.div`
 export const HeaderContainer = styled.div`
   width: 100%;
 `;
+
+export const Footer = styled.p`
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  color: ${colors.primaryTextColor};
+`;
+
+export const FooterContainer = styled.div`
+  margin-top: 44px;
+  text-align: center;
+`;

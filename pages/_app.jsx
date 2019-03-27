@@ -1,11 +1,11 @@
 import App, { Container } from 'next/app';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faShoppingBasket, faBullhorn } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import Header from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
-library.add(faPlus);
+library.add(faPlus, faShoppingBasket, faBullhorn);
 
 class RoommatesApp extends App {
   render() {
