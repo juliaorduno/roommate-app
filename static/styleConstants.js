@@ -24,7 +24,11 @@ export const defaultBorderRadius = '10px';
 export const defaultBoxShadow = '0 2px 6px 2px rgba(0,0,0,0.1)';
 
 export const CardContainer = styled.div`
-  width: 100%;
   border-radius: 10px;
   box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
+  background-color: ${colors.whiteColor};
+
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
 `;
