@@ -6,7 +6,7 @@
     },
     {
       "label": "To-do's",
-      "route": "/to-do"
+      "route": "/todos"
     },
     {
       "label": "Meetings",
