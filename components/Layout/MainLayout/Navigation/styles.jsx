@@ -30,6 +30,7 @@ export const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 `;
 
 export const LinkItem = styled.a`

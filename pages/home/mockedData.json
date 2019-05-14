@@ -1,6 +1,12 @@
 {
   "cards": [
     {
+      "type": "todo",
+      "userName": "Alfonso Contreras",
+      "item": "Clean the kitchen",
+      "date": "Feb 12, 2019 - 09:49 PM"
+    },
+    {
       "type": "shopping",
       "userName": "Maria Gutiérrez",
       "item": "6-pack of beers",
