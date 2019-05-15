@@ -33,7 +33,7 @@ class Profile extends PureComponent {
       <MainLayout title="My profile" active="profile">
         <UserInfoCard avatar={avatar} userName={userName} date={memberSinceDate} />
         <GroupInfoCard groupCode={groupCode} 
-          members={<p>{members.join()}</p>}
+          members={<span>{members.join()}</span>}
         />
       </MainLayout>
     );

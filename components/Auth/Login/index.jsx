@@ -21,6 +21,10 @@ class Login extends PureComponent {
     remember: false
   };
 
+  componentDidMount() {
+    //authenticationService.logout();
+  };
+
   onChange = (name, value) => {
     this.setState({ [[name]]: value });
   };

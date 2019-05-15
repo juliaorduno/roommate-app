@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Router from 'next/router';
 import { instance } from '../../services';
 import MainLayout from '../../components/Layout/MainLayout';
 import HomeCard from '../../components/Main/Cards/HomeCard';

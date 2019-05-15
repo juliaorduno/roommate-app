@@ -34,7 +34,7 @@ class Meetings extends PureComponent {
             key={meeting.id}
             event={meeting.event}
             text={"Organizer: " + meeting.organizer.full_name}
-            dueDate={formatDateLL(meeting.due_date)}
+            dueDate={formatDateLL(meeting.start_date)}
           />
         ))}
       </MainLayout>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { instance } from '../../../../../services';
 import PropTypes from 'prop-types';
 import MainModal from '../MainModal';
 import { Field, Label, TextInput, FieldsContainer } from '../styles';
@@ -9,8 +10,22 @@ class ShoppingModal extends Component {
   };
 
   onConfirm = () => {
-    // Add function
-  }
+    const { item } = this.state;
+
+    if (item.length > 0) {
+      const user = JSON.parse(localStorage.getItem('currentUser')).data;
+
+      const newItem = {
+        description: item,
+        group_id: parseInt(user.group_id),
+        created_by: parseInt(user.id),
+        finished: 0,
+      };
+      
+      instance.post(`/shoppingItems`, newItem)
+        .then(() => {});
+    }
+  };
 
   onChange = (name, value) => {
     this.setState({ [[name]]: value });
