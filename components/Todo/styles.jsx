@@ -18,6 +18,10 @@ export const CardContainer = styled.div`
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
+
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
 `;
 
 export const CardContent = styled.div`

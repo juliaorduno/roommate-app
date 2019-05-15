@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import { instance } from '../../../services';
+import Router from 'next/router';
 import { FormContainer } from '../styles';
 import ButtonContainer from './styles';
 import Field from '../Field';
@@ -12,6 +14,22 @@ class JoinGroup extends PureComponent {
 
   onChange = (name, value) => {
     this.setState({ [[name]]: value });
+  };
+
+  joinGroup = ev => {
+    ev.preventDefault();
+
+    const user = JSON.parse(localStorage.getItem('currentUser')).data;
+    const { groupCode } = this.state;
+    const payload = {
+      group_code: groupCode,
+      member_id: user.id,
+    };
+    instance.post(`/members/joinGroup`, payload)
+      .then(res => {
+        localStorage.setItem('currentUser', JSON.stringify(res.data));
+        Router.push('/home');
+      });
   };
 
   render() {
@@ -32,7 +50,7 @@ class JoinGroup extends PureComponent {
             required
           />
           <ButtonContainer>
-            <Button width="265px" text="Join" onClick={() => {}} addClass="primary" />
+            <Button width="265px" text="Join" onClick={this.joinGroup} addClass="primary" />
           </ButtonContainer>
         </FormContainer>
       </React.Fragment>
