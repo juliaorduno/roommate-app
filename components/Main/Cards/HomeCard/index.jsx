@@ -40,7 +40,7 @@ const HomeCard = ({ data }) => {
           avatar={data.avatar ? data.avatar : ''}
           userName={data.userName}
           date={data.date}
-          item={data.item}
+          name={data.name}
         />
       );
     default:

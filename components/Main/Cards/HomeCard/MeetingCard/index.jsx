@@ -4,11 +4,11 @@ import MainCard from '../MainCard';
 import Title from './Title';
 import { colors } from '../../../../../static/styleConstants';
 
-const MeetingCard = ({ avatar, userName, date, item }) => (
+const MeetingCard = ({ avatar, userName, date, name }) => (
   <MainCard
     avatar={avatar}
     icon="calendar-alt"
-    Title={<Title userName={userName} item={item} />}
+    Title={<Title userName={userName} name={name} />}
     color={colors.primaryColor}
     date={date}
   />
@@ -20,7 +20,7 @@ MeetingCard.propTypes = {
   avatar: PropTypes.string,
   date: PropTypes.string.isRequired,
   userName: PropTypes.string.isRequired,
-  item: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 MeetingCard.defaultProps = {
