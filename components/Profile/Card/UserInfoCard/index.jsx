@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AuthButton, LoggedIn, Value } from '@solid/react'
+import { LoggedIn, LoggedOut, Value } from '@solid/react'
+import { SolidButton, SolidMessage } from './styles';
 import MainCard from '../../MainCard'
 import {Container, Avatar, InfoContainer, TitleContainer, SinceContainer, SinceDate, Highlight, SolidLoginContainer } from '../../styles'
 
@@ -9,17 +10,25 @@ const UserInfoCard = ({ avatar, userName, date, children }) => (
     <Container>
       <Avatar src={avatar || '../../../../static/images/defaultAvatar.svg'} />
       <InfoContainer>
-        <TitleContainer>{userName}</TitleContainer>
+        <LoggedOut>
+          <TitleContainer>{userName}</TitleContainer>
+        </LoggedOut>
+        <LoggedIn>
+          <TitleContainer><Value src='user.name' /></TitleContainer>
+        </LoggedIn>
         <SinceContainer>
           <SinceDate>Member since {date}</SinceDate>
         </SinceContainer>
         {children}
       </InfoContainer>
       <SolidLoginContainer>
-          <AuthButton popup="./popup.html" />
+          <SolidButton popup="./popup.html" />
           <LoggedIn>
-              <p>Welcome back, <Value src='user.name' />.</p>
+              <SolidMessage>Logged In.</SolidMessage>
           </LoggedIn>
+          <LoggedOut>
+              <SolidMessage>Log in to use your SOLID pod info.</SolidMessage>
+          </LoggedOut>
       </SolidLoginContainer>
     </Container>
   </MainCard>

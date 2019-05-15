@@ -16,11 +16,11 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
+    server.use(express.static('public'))
+
     server.get('*', (req, res) => {
       return handle(req, res);
     });
-
-    server.use('/popup', express.static(`${__dirname  }/popup.html`));
 
     server.listen(3000, err => {
       if (err) throw err;

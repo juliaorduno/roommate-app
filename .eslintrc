@@ -4,7 +4,7 @@
   },
   "parser": "babel-eslint",
   "extends": ["airbnb", "plugin:react/recommended", "prettier", "prettier/react"],
-  "plugins": ["react", "jsx-a11y", "import", "prettier"],
+  "plugins": ["react", "jsx-a11y", "import", "prettier", "html"],
   "rules": {
     "jsx-a11y/anchor-is-valid": 0,
     "import/no-extraneous-dependencies": 0
