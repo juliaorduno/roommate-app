@@ -34,6 +34,15 @@ export const InfoContainer = styled.div`
   text-align: left;
 `;
 
+export const SolidLoginContainer = styled.div`
+  width: calc(100% - 70px);
+  margin-left: 16px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+`;
+
 export const ItemTypeOuter = styled.div`
   height: 40px;
   width: 40px;
