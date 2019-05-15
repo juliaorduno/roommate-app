@@ -2,7 +2,7 @@ import React, { PureComponent }  from 'react';
 import MainLayout from '../../components/Layout/MainLayout';
 import Card from '../../components/Todo/Card';
 import { instance } from '../../services';
-import moment from 'moment';
+import { formatDateLL } from '../../static/utils';
 
 class ToDo extends PureComponent {
   state = {
@@ -15,8 +15,6 @@ class ToDo extends PureComponent {
     instance.get(`/groups/${user.group_id}/tasks`)
       .then( res => this.setState({ toDos: res.data.todos }));
   };
-
-  formatDate = rawDate => `${moment(rawDate).format('dddd')}, ${moment(rawDate).format('LL')}`;
 
   finishTask = ev => {
     const user = JSON.parse(localStorage.getItem('currentUser')).data;
@@ -39,7 +37,7 @@ class ToDo extends PureComponent {
             key={task.id}
             name={task.id}
             item={task.description}
-            dueDate={this.formatDate(task.due_date)}
+            dueDate={formatDateLL(task.due_date)}
             text={"Asignee: " + task.asignee.full_name}
             finished={task.finished == 1}
             handler={this.finishTask.bind(this)}

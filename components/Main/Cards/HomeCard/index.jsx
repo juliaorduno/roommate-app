@@ -22,7 +22,7 @@ const HomeCard = ({ data }) => {
           avatar={data.avatar ? data.avatar : ''}
           userName={data.userName}
           date={data.date}
-          announcement={data.announcement}
+          announcement={data.item}
         />
       );
     case 'todo':
@@ -40,7 +40,7 @@ const HomeCard = ({ data }) => {
           avatar={data.avatar ? data.avatar : ''}
           userName={data.userName}
           date={data.date}
-          name={data.name}
+          name={data.item}
         />
       );
     default:

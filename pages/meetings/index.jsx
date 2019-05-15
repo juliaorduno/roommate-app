@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { instance } from '../../services';
 import MainLayout from '../../components/Layout/MainLayout';
 import MeetingCard from '../../components/Todo/MeetingCard';
-import moment from 'moment';
+import { formatDateLL } from '../../static/utils';
 
 class Meetings extends PureComponent {
 
@@ -17,7 +17,7 @@ class Meetings extends PureComponent {
       .then(res => this.setState({ meetings: res.data.meetings }));
   };
 
-  formatDate = rawDate => `${moment(rawDate).format('dddd')}, ${moment(rawDate).format('LL')}`;
+  
 
   render() {
     const { meetings } = this.state;
@@ -34,7 +34,7 @@ class Meetings extends PureComponent {
             key={meeting.id}
             event={meeting.event}
             text={"Organizer: " + meeting.organizer.full_name}
-            dueDate={this.formatDate(meeting.due_date)}
+            dueDate={formatDateLL(meeting.due_date)}
           />
         ))}
       </MainLayout>

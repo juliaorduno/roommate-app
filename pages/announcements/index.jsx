@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import moment from 'moment';
 import { instance } from '../../services';
+import { formatDateLLL } from '../../static/utils';
 import MainLayout from '../../components/Layout/MainLayout';
 import AnnouncementCard from '../../components/Main/Cards/HomeCard/AnnouncementCard';
 
@@ -17,8 +17,6 @@ class Announcements extends PureComponent {
       .then(res => this.setState({ announcements: res.data.announcements }));
   };
 
-  formatDate = rawDate => `${moment(rawDate).format('LLL')}`;
-
   render() {
 
     const { announcements } = this.state;
@@ -30,7 +28,7 @@ class Announcements extends PureComponent {
             key={announcement.id}
             announcement={announcement.content}
             userName={announcement.posted_by.full_name}
-            date={this.formatDate(announcement.created_at)}
+            date={formatDateLLL(announcement.created_at)}
             showIcon={false}
             text="posted:"
           />
