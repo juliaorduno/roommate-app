@@ -4,6 +4,8 @@ export const formatDateLLL = rawDate => `${moment(rawDate).format('LLL')}`;
 
 export const formatDateLL = rawDate => `${moment(rawDate).format('dddd')}, ${moment(rawDate).format('LL')}`;
 
+export const formatDateLLSimple = rawDate => `${moment(rawDate).format('LL')}`;
+
 export const getCardType = typeId => {
   switch(typeId) {
     case 1:
