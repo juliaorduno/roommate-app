@@ -25,7 +25,7 @@ InputCard.displayName = 'InputCard';
 
 InputCard.propTypes = {
   placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onPostClick: PropTypes.func.isRequired,
   onCancelClick: PropTypes.func.isRequired,

@@ -15,7 +15,7 @@ MainCard.displayName = 'MainCard';
 
 MainCard.propTypes = {
   children: PropTypes.node,
-  title: PropTypes.string
+  title: PropTypes.element
 };
 
 MainCard.defaultProps = {

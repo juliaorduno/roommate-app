@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import { authenticationService } from '../../../services';
+import Router from 'next/router';
 import Link from 'next/link';
 import {
   LogoImage,
@@ -19,6 +21,10 @@ class Login extends PureComponent {
     remember: false
   };
 
+  componentDidMount() {
+    //authenticationService.logout();
+  };
+
   onChange = (name, value) => {
     this.setState({ [[name]]: value });
   };
@@ -26,6 +32,14 @@ class Login extends PureComponent {
   handleChecked = () => {
     const { remember } = this.state;
     this.setState({ remember: !remember });
+  };
+
+  signIn = ev => {
+    ev.preventDefault();
+
+    const { email, password } = this.state;
+    authenticationService.login(email, password)
+      .then(res => Router.push('/home'));
   };
 
   render() {
@@ -68,9 +82,7 @@ class Login extends PureComponent {
             </RememberContainer>
             <Forgot>Forgot your password</Forgot>
           </ActionsContainer>
-          <Link href="/home">
-            <Button width="100%" text="Login" onClick={() => {}} addClass="primary" />
-          </Link>
+          <Button width="100%" text="Login" onClick={this.signIn} addClass="primary" />
           <Link href="/signup">
             <Button width="100%" text="Sign up" onClick={() => {}} addClass="secondary" />
           </Link>

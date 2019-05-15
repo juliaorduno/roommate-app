@@ -5,13 +5,14 @@ import Title from './Title';
 import { AnnouncementContainer, Announcement } from './styles';
 import { colors } from '../../../../../static/styleConstants';
 
-const AnnouncementCard = ({ avatar, announcement, userName, date }) => (
+const AnnouncementCard = ({ avatar, announcement, userName, date, showIcon, text }) => (
   <MainCard
     avatar={avatar}
     icon="bullhorn"
-    Title={<Title userName={userName} />}
+    Title={<Title userName={userName} text={text}/>}
     color={colors.purpleColor}
     date={date}
+    showIcon={showIcon}
   >
     <AnnouncementContainer>
       <Announcement>{announcement}</Announcement>
@@ -29,7 +30,8 @@ AnnouncementCard.propTypes = {
 };
 
 AnnouncementCard.defaultProps = {
-  avatar: ''
+  avatar: '',
+  showIcon: true
 };
 
 export default AnnouncementCard;

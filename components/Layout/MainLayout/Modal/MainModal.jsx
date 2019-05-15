@@ -8,6 +8,11 @@ const MainModal = ({isOpen, toggleModal, title, children, onCancelClick, onConfi
     toggleModal();
   }
 
+  const add = () => {
+    onConfirmClick();
+    toggleModal();
+  }
+
   return (
     <StyledModal
       isOpen={isOpen}
@@ -19,7 +24,7 @@ const MainModal = ({isOpen, toggleModal, title, children, onCancelClick, onConfi
         {children}
         <ButtonContainer>
           <CancelButton onClick={cancel}>CANCEL</CancelButton>
-          <PostButton onClick={onConfirmClick}>{confirmMessage}</PostButton>
+          <PostButton onClick={add}>{confirmMessage}</PostButton>
         </ButtonContainer>
       </ModalContainer>
     </StyledModal>

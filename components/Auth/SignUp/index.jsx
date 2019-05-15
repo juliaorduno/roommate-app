@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import Link from 'next/link';
+import { instance } from '../../../services';
+import Router from 'next/router';
 import { FormContainer } from '../styles';
 import ButtonContainer from './styles';
 import Field from '../Field';
@@ -17,6 +18,39 @@ class SignUp extends PureComponent {
 
   onChange = (name, value) => {
     this.setState({ [[name]]: value });
+  };
+
+  createUser = (nextRoute) => {
+    
+    const { email, password, confirmPassword, name, username } = this.state;
+    const passwordsMatch = password === confirmPassword;
+    const filledFields = email.length > 0 && password.length > 0 && name.length > 0 && username.length > 0;
+
+    if ( passwordsMatch && filledFields ) {
+      const user = {
+        email,
+        password,
+        username,
+        full_name: name
+      };
+
+      instance.post(`/users`, user)
+        .then(res => {
+          localStorage.setItem('currentUser', JSON.stringify(res.data));
+          Router.push(nextRoute);
+        });
+    }
+    
+  };
+
+  joinGroupHandler = ev => {
+    ev.preventDefault();
+    this.createUser('/signup/join-group');
+  };
+
+  createGroupHandler = ev => {
+    ev.preventDefault();
+    this.createUser('/signup/create-group');
   };
 
   render() {
@@ -77,12 +111,8 @@ class SignUp extends PureComponent {
             required
           />
           <ButtonContainer>
-            <Link href="/signup/join-group">
-              <Button width="255px" text="Join Group" onClick={() => {}} addClass="primary" />
-            </Link>
-            <Link href="/signup/create-group">
-              <Button width="255px" text="Create Group" onClick={() => {}} addClass="secondary" />
-            </Link>
+            <Button width="255px" text="Join Group" onClick={this.joinGroupHandler} addClass="primary" />
+            <Button width="255px" text="Create Group" onClick={this.createGroupHandler} addClass="secondary" />
           </ButtonContainer>
         </FormContainer>
       </React.Fragment>

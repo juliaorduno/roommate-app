@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BoldText, Checkbox } from '../styles';
 import MainCard from '../MainCard';
-import Title from './Title';
-import { Checkbox } from '../styles';
 
-const Card = ({ item, dueDate, text, finished, handler, name }) => (
+const ShoppingCard = ({ item, text, finished, handler, name }) => (
   <MainCard 
-    title={<Title item={item} dueDate={dueDate}/>}
+    title={<BoldText>{item}</BoldText>}
     text={text}
     finished={finished}
     handler={handler}
@@ -15,18 +14,16 @@ const Card = ({ item, dueDate, text, finished, handler, name }) => (
   />
 );
 
-Card.displayName = 'Card';
+ShoppingCard.displayName = 'ShoppingCard';
 
-Card.propTypes = {
+ShoppingCard.propTypes = {
   item: PropTypes.string,
-  dueDate: PropTypes.string,
   text: PropTypes.string
 };
 
-Card.defaultProps = {
+ShoppingCard.defaultProps = {
   item: 'Item',
-  dueDate: 'Due Date',
   text: 'Assignee'
 };
 
-export default Card;
+export default ShoppingCard;

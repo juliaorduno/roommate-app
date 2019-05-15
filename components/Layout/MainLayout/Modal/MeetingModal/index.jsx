@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { instance } from '../../../../../services';
 import PropTypes from 'prop-types';
 import MainModal from '../MainModal';
 import { Field, Label, TextInput, NumberInput, Numbers, FieldsContainer } from '../styles';
@@ -14,7 +15,22 @@ class MeetingModal extends Component {
   };
 
   onConfirm = () => {
-    // Add function
+    const { name, day, month, year, hour, minute} = this.state;
+
+    if(name.length > 0) {
+      const user = JSON.parse(localStorage.getItem('currentUser')).data;
+
+      const newMeeting = {
+        event: name,
+        group_id: parseInt(user.group_id),
+        created_by: parseInt(user.id),
+        start_date: `20${year}-${month}-${day}T${hour}:${minute}:00-05:00`,
+        end_date: `20${year}-${month}-${day}T${hour}:${minute}:00-05:00`,
+      };
+
+      instance.post(`/meetings`, newMeeting)
+        .then(() => {});
+    }
   }
 
   onChange = (name, value) => {
