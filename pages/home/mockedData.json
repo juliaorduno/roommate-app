@@ -17,6 +17,12 @@
       "userName": "Eduardo Alcazar",
       "announcement": "Remember guys to make the monthly rental deposit to my bank account by the end of the week.",
       "date": "Jan 26, 2019 - 11:49 AM"
+    },
+    {
+      "type": "meeting",
+      "userName": "Mike Sagnelli",
+      "item": "Cleaning schedules planning meeting.",
+      "date": "Mar 26, 2019 - 10:00 AM"
     }
   ]
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ShoppingCard from './ShoppingCard';
 import AnnouncementCard from './AnnouncementCard';
+import MeetingCard from './MeetingCard';
 import TodoCard from './TodoCard'
 
 const HomeCard = ({ data }) => {
@@ -27,6 +28,15 @@ const HomeCard = ({ data }) => {
     case 'todo':
       return (
         <TodoCard
+          avatar={data.avatar ? data.avatar : ''}
+          userName={data.userName}
+          date={data.date}
+          item={data.item}
+        />
+      );
+    case 'meeting':
+      return (
+        <MeetingCard
           avatar={data.avatar ? data.avatar : ''}
           userName={data.userName}
           date={data.date}
