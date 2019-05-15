@@ -1,12 +1,54 @@
-import React from 'react';
+import React, { PureComponent }  from 'react';
 import MainLayout from '../../components/Layout/MainLayout';
 import Card from '../../components/Todo/Card';
+import { instance } from '../../services';
+import moment from 'moment';
 
-const ToDo = () => (
-  <MainLayout title="To-do's" footer="No more to-do's" hasAddButton active="To-do's">
-    <Card item="Clean the kitchen" dueDate="Thursday, May 14, 2019" text="Assignee: Julia Paola"/>
-  </MainLayout>
-);
+class ToDo extends PureComponent {
+  state = {
+    toDos: [],
+  }
+
+  componentDidMount() {
+    const user = JSON.parse(localStorage.getItem('currentUser')).data;
+
+    instance.get(`/groups/${user.group_id}/tasks`)
+      .then( res => this.setState({ toDos: res.data.todos }));
+  };
+
+  formatDate = rawDate => `${moment(rawDate).format('dddd')}, ${moment(rawDate).format('LL')}`;
+
+  finishTask = ev => {
+    const user = JSON.parse(localStorage.getItem('currentUser')).data;
+    const requestPayload = {
+      id: parseInt(ev.target.name),
+      finished_by: user.id
+    };
+
+    instance.post(`/tasks/finish`, requestPayload)
+      .then(res => console.log(res));
+  };
+
+  render() {
+    const { toDos } = this.state;
+
+    return (
+      <MainLayout title="To-do's" footer="No more to-do's" hasAddButton active="To-do's">
+        {toDos.map(task => (
+          <Card 
+            key={task.id}
+            name={task.id}
+            item={task.description}
+            dueDate={this.formatDate(task.due_date)}
+            text={"Asignee: " + task.asignee.full_name}
+            finished={task.finished == 1}
+            handler={this.finishTask.bind(this)}
+          />
+        ))}
+      </MainLayout>
+    );
+  }
+}
 
 ToDo.displayName = 'ToDo';
 

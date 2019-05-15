@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 import { colors } from '../../static/styleConstants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+export const CalendarIcon = styled(FontAwesomeIcon)`
+  color: ${colors.primaryColor};
+`;
 
 export const TitleContainer = styled.div`
   width: fit-content;
@@ -18,6 +23,7 @@ export const CardContainer = styled.div`
 export const CardContent = styled.div`
   padding: 40px;
   vertical-align: middle;
+  display: flex;
 `;
 
 export const CardTitle = styled.h1`
@@ -55,4 +61,33 @@ export const BoldText = styled(Text)`
 export const Highlight = styled(Text)`
   color: ${colors.pinkColor};
   font-weight: 600;
+`;
+
+export const OrangeText = styled.span`
+  color: ${colors.primaryColor};
+`;
+
+export const CheckboxContainer = styled.div`
+  width: 8%;
+`
+
+export const InfoContainer = styled.div`
+  width: 92%;
+`
+
+export const Checkbox = styled.input`
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: solid 2px ${colors.placeholderColor};
+  border-radius: 15px;
+  cursor: pointer;
+
+  &.finished {
+    background-color: ${colors.greenColor};
+  }
+
+  &:focus: {
+    offset: 0;
+  }
 `;

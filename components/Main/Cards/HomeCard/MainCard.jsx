@@ -15,17 +15,19 @@ import {
 } from './styles';
 import { CardContainer } from '../../../../static/styleConstants';
 
-const MainCard = ({ avatar, icon, children, color, date, Title }) => (
+const MainCard = ({ avatar, icon, children, color, date, Title, showIcon }) => (
   <CardContainer>
-    <PositionItemType>
-      <ItemTypeOuter>
-        <ItemTypeInner color={color}>
-          <ItemTypeIcon>
-            <FontAwesomeIcon icon={icon} />
-          </ItemTypeIcon>
-        </ItemTypeInner>
-      </ItemTypeOuter>
-    </PositionItemType>
+    {showIcon && (
+      <PositionItemType>
+        <ItemTypeOuter>
+          <ItemTypeInner color={color}>
+            <ItemTypeIcon>
+              <FontAwesomeIcon icon={icon} />
+            </ItemTypeIcon>
+          </ItemTypeInner>
+        </ItemTypeOuter>
+      </PositionItemType>
+    )}
     <Container>
       <Avatar src={avatar || '../../../../static/images/defaultAvatar.svg'} />
       <InfoContainer>
@@ -53,7 +55,8 @@ MainCard.propTypes = {
 MainCard.defaultProps = {
   avatar: '',
   children: null,
-  color: ''
+  color: '',
+  showIcon: true
 };
 
 export default MainCard;

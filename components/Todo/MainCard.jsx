@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TitleContainer, CardContainer, CardContent, CardText } from './styles';
+import { TitleContainer, CardContainer, CardContent, CardText, CheckboxContainer,
+  InfoContainer } from './styles';
 
-const MainCard = ({ children, title, text }) => (
+const MainCard = ({ children, title, text, finished, handler, name, actionElement }) => (
   <CardContainer>
     <CardContent>
-      <TitleContainer>{title}</TitleContainer>
-      <CardText>{text}</CardText>
+      <CheckboxContainer>
+        {actionElement}
+      </CheckboxContainer>
+      <InfoContainer>
+        <TitleContainer>{title}</TitleContainer>
+        <CardText>{text}</CardText>
+      </InfoContainer>
     </CardContent>
     {children}
   </CardContainer>
@@ -16,7 +22,7 @@ MainCard.displayName = 'Card';
 
 MainCard.propTypes = {
   children: PropTypes.node,
-  title: PropTypes.string,
+  title: PropTypes.node,
   text: PropTypes.string
 };
 
