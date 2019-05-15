@@ -20,6 +20,8 @@ app
       return handle(req, res);
     });
 
+    server.use('/popup', express.static(`${__dirname  }/popup.html`));
+
     server.listen(3000, err => {
       if (err) throw err;
       // eslint-disable-next-line no-console

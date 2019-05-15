@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { AuthButton, LoggedIn, Value } from '@solid/react'
 import MainCard from '../../MainCard'
-import {Container, Avatar, InfoContainer, TitleContainer, SinceContainer, SinceDate, Highlight } from '../../styles'
+import {Container, Avatar, InfoContainer, TitleContainer, SinceContainer, SinceDate, Highlight, SolidLoginContainer } from '../../styles'
 
 const UserInfoCard = ({ avatar, userName, date, children }) => (
   <MainCard title={<Highlight>User information</Highlight>}>
@@ -14,6 +15,12 @@ const UserInfoCard = ({ avatar, userName, date, children }) => (
         </SinceContainer>
         {children}
       </InfoContainer>
+      <SolidLoginContainer>
+          <AuthButton popup="./popup.html" />
+          <LoggedIn>
+              <p>Welcome back, <Value src='user.name' />.</p>
+          </LoggedIn>
+      </SolidLoginContainer>
     </Container>
   </MainCard>
 );
