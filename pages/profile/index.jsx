@@ -5,7 +5,7 @@ import GroupInfoCard from '../../components/Profile/Card/GroupInfoCard';
 import UserInfoCard from '../../components/Profile/Card/UserInfoCard'
 
 const Profile = ({ avatar, userName, memberSinceDate, groupCode }) => (
-  <MainLayout title="My profile" active="To-do's">
+  <MainLayout title="My profile" active="profile">
     <UserInfoCard avatar={avatar} userName={userName} date={memberSinceDate} />
     <GroupInfoCard groupCode={groupCode}/>
   </MainLayout>

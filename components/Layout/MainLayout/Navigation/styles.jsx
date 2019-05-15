@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors } from '../../../../static/styleConstants';
 
 export const NavBar = styled.div`
@@ -8,6 +9,42 @@ export const NavBar = styled.div`
   width: 100%;
   background-color: ${colors.whiteColor};
   box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
+`;
+
+export const IconContainer = styled.div`
+  width: 85px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  right: 45px;
+  top: 20px;
+  height: 20px;
+`;
+
+export const Icon = styled(FontAwesomeIcon)`
+  &&.bell {
+    height: 20px;
+    width: 16.67px;
+  }
+
+  &&.user {
+    height: 20px;
+    width: 19.17px;
+    cursor: pointer;
+  }
+
+  &>path {
+    fill: ${colors.primaryTextColor};
+  }
+
+  &.active>path {
+    fill: ${colors.primaryColor};
+  }
+
+  &.disabled>path {
+    fill: #CECECE;
+  }
 `;
 
 export const LogoImg = styled.img`

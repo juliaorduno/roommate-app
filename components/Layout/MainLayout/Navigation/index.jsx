@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { NavBar, LogoImg, LinksContainer, LinkContainer, LinkItem } from './styles';
+import { NavBar, LogoImg, LinksContainer, LinkContainer, LinkItem, IconContainer, Icon } from './styles';
 import { links } from './navigation.json';
 
 const Navigation = ({ active }) => (
@@ -16,6 +16,12 @@ const Navigation = ({ active }) => (
         </LinkContainer>
       ))}
     </LinksContainer>
+    <IconContainer>
+        <Icon className="bell disabled" icon="bell"/>
+        <Link href="/profile">
+          <Icon className={active === 'profile' ? 'user active' : 'user'} icon="user"/>
+        </Link>
+    </IconContainer>
   </NavBar>
 );
 
